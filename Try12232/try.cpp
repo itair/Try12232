@@ -1,12 +1,18 @@
 //C++ Primer Plus 课后习题 p109 3.7 
 // by itAir
 // Try to use Google C++ programing style
-
 #include "try.h"
 #include <iostream>
 #include <string>
 #include <cstring>
 using namespace std;
+
+struct  CandyBar{
+  string  brand;
+  double  weight;
+  int     energy;
+}; //using struct 格式问题  
+//使用 string注意编译器问题和 namespace 问题.
 
 void main(){
 	cout<< "C++_Primer_Plus"<<endl;
@@ -45,28 +51,52 @@ void main(){
 //   cout << " for you, " << name << ".\n";
   // string 代替 char[]的好处是安全性高；
   cout<<"_________________________________"<<endl<<endl;   
-  //3 
-  const unsigned int kNumOfNames= 20;
-  char firstname[kNumOfNames], lastname[kNumOfNames];
-  cout << "Enter your first name: ";
-  cin.getline( firstname, kNumOfNames );
-  //cin.get(); // 起新行 
-  cin.clear(); // 重定向流
-  cout << "Enter your last name: ";
-  cin.getline( lastname, kNumOfNames );
-  cout << "Here's the information in a single string: " 
-    << lastname << " , " << firstname << endl;
+//   //3 
+//   const unsigned int kNumOfNames= 20;
+//   char firstname[kNumOfNames], lastname[kNumOfNames];
+//   cout << "Enter your first name: ";
+//   cin.getline( firstname, kNumOfNames );
+//   //cin.get(); // 起新行 
+//   cin.clear(); // 重定向流
+//   cout << "Enter your last name: ";
+//   cin.getline( lastname, kNumOfNames );
+//   cout << "Here's the information in a single string: " 
+//     << lastname << " , " << firstname << endl;
+//   cout<<"_________________________________"<<endl<<endl;  
+//   //4
+//   string firstname_, lastname_;
+//   cout << "Enter your first name: ";
+//   getline( cin, firstname_ );
+//   cout << "Enter your last name: ";
+//   getline( cin, lastname_ );
+//   cout << "Here's the information in a single string: " 
+//     << lastname_ << " , " << firstname_ << endl;
+//   //char[]  string 输入的时候 格式不同：
+//   //cin.getline 与 getling (cin,string) 的区别   
   cout<<"_________________________________"<<endl<<endl;  
-  //4
-  string firstname_, lastname_;
-  cout << "Enter your first name: ";
-  getline( cin, firstname_ );
-  cout << "Enter your last name: ";
-  getline( cin, lastname_ );
-  cout << "Here's the information in a single string: " 
-    << lastname_ << " , " << firstname_ << endl;
-  //char[]  string 输入的时候 格式不同：
-  //cin.getline 与 getling (cin,string) 的区别   
-  cout<<"_________________________________"<<endl<<endl;  
+  //5
+  CandyBar snack = { "Mocha Munch", 2.3, 350 };
+  cout << "Good's Name: snack \n"
+      << " Brand name : " << snack.brand << endl
+      << " Net weight : " << snack.weight << endl
+      << " Energy : " << snack.energy << endl;
+  //struct使用
+   cout<<"_________________________________"<<endl<<endl; 
+   //6
+   CandyBar snacks[3] = {
+     { "Mocha 1", 2.3, 350 },
+     { "Mocha 2", 2.5, 330 },
+     { "Mocha 3", 6.8, 120 }
+   };
+   for ( int i = 0; i < 3; i++ ){
+  //   snacks[i] = {"Mocha 1", 2.3, 350 }; //  BAD!!
+     cout << "Good's Name: snack"<< i << " \n"
+       << " Brand name : " << snacks[i].brand << endl
+       << " Net weight : " << snacks[i].weight << endl
+       << " Energy : " << snacks[i].energy << endl<<endl;
+   }
+   //struct 数组必须在定义的时候初始化.否则只能单个成员赋值
+  cout<<"_________________________________"<<endl<<endl; 
+
 	system("pause");
 }
