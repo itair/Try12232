@@ -36,17 +36,37 @@ void main(){
 // 	const int ArSize = 20;
 // 	char name[ArSize];
 // 	char dessert[ArSize];
-  string name, dessert;
-  cout << "Enter your name: \n";
-  cin >> name;
-  cout << "Enter your favorite dessert: \n";
-  cin >> dessert;
-  cout << "I have some delicious "<< dessert;
-  cout << " for you, " << name << ".\n";
+//   string name, dessert;
+//   cout << "Enter your name: \n";
+//   cin >> name;
+//   cout << "Enter your favorite dessert: \n";
+//   cin >> dessert;
+//   cout << "I have some delicious "<< dessert;
+//   cout << " for you, " << name << ".\n";
   // string 代替 char[]的好处是安全性高；
   cout<<"_________________________________"<<endl<<endl;   
-  //3
-
-
+  //3 
+  const unsigned int kNumOfNames= 20;
+  char firstname[kNumOfNames], lastname[kNumOfNames];
+  cout << "Enter your first name: ";
+  cin.getline( firstname, kNumOfNames );
+  //cin.get(); // 起新行 
+  cin.clear(); // 重定向流
+  cout << "Enter your last name: ";
+  cin.getline( lastname, kNumOfNames );
+  cout << "Here's the information in a single string: " 
+    << lastname << " , " << firstname << endl;
+  cout<<"_________________________________"<<endl<<endl;  
+  //4
+  string firstname_, lastname_;
+  cout << "Enter your first name: ";
+  getline( cin, firstname_ );
+  cout << "Enter your last name: ";
+  getline( cin, lastname_ );
+  cout << "Here's the information in a single string: " 
+    << lastname_ << " , " << firstname_ << endl;
+  //char[]  string 输入的时候 格式不同：
+  //cin.getline 与 getling (cin,string) 的区别   
+  cout<<"_________________________________"<<endl<<endl;  
 	system("pause");
 }
