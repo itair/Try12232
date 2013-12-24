@@ -5,6 +5,8 @@
 #include <iostream>
 #include <string>
 #include <cstring>
+#include <array>
+
 using namespace std;
 //使用 string注意编译器问题和 namespace 问题.
 struct  CandyBar{
@@ -44,10 +46,7 @@ void main(){
 	//get()不丢弃回车 getline不忽略空格 read只能读char
 	cout<<"_________________________________"<<endl<<endl;      
 	//2
-	const int ArSize = 20;
-	char name[ArSize];
-	char dessert[ArSize];
-  string name, dessert;
+	string name, dessert;
   cout << "Enter your name: \n";
   cin >> name;
   cout << "Enter your favorite dessert: \n";
@@ -148,7 +147,18 @@ void main(){
       << " Net weight : " << snacks[i].weight << endl
       << " Energy : " << snacks[i].energy << endl<<endl;
   }
-   // 6题的 NEW 版本 
+   // 6题的 NEW 版本  可循环赋值 
    cout<<"_________________________________"<<endl<<endl; 
+   //10
+   array<double , 3> race_result;
+   double average_result;
+   cout << "Enter 3 race results one by one : ";
+   cin >> race_result[0] >> race_result[1] >> race_result[2];
+   average_result = race_result[0] + race_result[1] + race_result[2];
+   average_result /= 3;
+   cout << "Average result is :" << average_result << endl;
+   // array 作为 数组的替代品 效率较 vector 高 操作简单
+   cout<<"_________________________________"<<endl<<endl; 
+
    system("pause");
 }
