@@ -65,7 +65,7 @@ void main(){
   cout << "Enter your last name: ";
   cin.getline( lastname, kNumOfNames );
   cout << "Here's the information in a single string: " 
-    << lastname << " , " << firstname << endl;
+	<< lastname << " , " << firstname << endl;
   cout<<"_________________________________"<<endl<<endl;  
   //4
   string firstname_, lastname_;
@@ -74,30 +74,30 @@ void main(){
   cout << "Enter your last name: ";
   getline( cin, lastname_ );
   cout << "Here's the information in a single string: " 
-    << lastname_ << " , " << firstname_ << endl;
+	<< lastname_ << " , " << firstname_ << endl;
   //char[]  string 输入的时候 格式不同：
   //cin.getline 与 getling (cin,string) 的区别   
   cout<<"_________________________________"<<endl<<endl;  
   //5
   CandyBar snack = { "Mocha Munch", 2.3, 350 };
   cout << "Good's Name: snack \n"
-      << " Brand name : " << snack.brand << endl
-      << " Net weight : " << snack.weight << endl
-      << " Energy : " << snack.energy << endl;
+	  << " Brand name : " << snack.brand << endl
+	  << " Net weight : " << snack.weight << endl
+	  << " Energy : " << snack.energy << endl;
   //struct使用
    cout<<"_________________________________"<<endl<<endl; 
    //6
    CandyBar snacks[3] = {
-     { "Mocha 1", 2.3, 350 },
-     { "Mocha 2", 2.5, 330 },
-     { "Mocha 3", 6.8, 120 }
+	 { "Mocha 1", 2.3, 350 },
+	 { "Mocha 2", 2.5, 330 },
+	 { "Mocha 3", 6.8, 120 }
    };
    for ( int i = 0; i < 3; i++ ){
   //   snacks[i] = {"Mocha 1", 2.3, 350 }; //  BAD!!
-     cout << "Good's Name: snack No."<< i << " \n"
-       << " Brand name : " << snacks[i].brand << endl
-       << " Net weight : " << snacks[i].weight << endl
-       << " Energy : " << snacks[i].energy << endl<<endl;
+	 cout << "Good's Name: snack No."<< i << " \n"
+	   << " Brand name : " << snacks[i].brand << endl
+	   << " Net weight : " << snacks[i].weight << endl
+	   << " Energy : " << snacks[i].energy << endl<<endl;
    }
    //struct 数组必须在定义的时候初始化.否则只能单个成员赋值
   cout<<"_________________________________"<<endl<<endl; 
@@ -112,8 +112,8 @@ void main(){
   cin >> pizza1.weight;
   cin.clear();
   cout << " Your pizza is " << pizza1.company << " made and "
-    << pizza1.diameter << " inches at the weight of "
-    << pizza1.weight << " pounds. \n";
+	<< pizza1.diameter << " inches at the weight of "
+	<< pizza1.weight << " pounds. \n";
   // struct 普通版本
    cout<<"_________________________________"<<endl<<endl; 
   //8
@@ -127,9 +127,9 @@ void main(){
   cin >> pizza2->weight;
   cin.clear();
   cout << " Your pizza is " << pizza2->company << " made and "
-       << pizza2->diameter << " inches at the weight of "
-       << pizza2->weight << " pounds. \n";
-     // struct new 版本
+	   << pizza2->diameter << " inches at the weight of "
+	   << pizza2->weight << " pounds. \n";
+	 // struct new 版本
   cout<<"_________________________________"<<endl<<endl; 
   //9
   CandyBar* snacks_new = new CandyBar;
@@ -139,13 +139,13 @@ void main(){
 //     { "Mocha 3", 6.8, 120 }
 //   };
   for ( int i = 0; i < 3; i++ ){
-    snacks_new->brand = "Mocha"+1;
-    snacks_new->weight = 2.3 + i;
-    snacks_new->energy = 250 * i; 
-    cout << "Good's Name: snack No."<< i << " \n"
-      << " Brand name : " << snacks[i].brand << endl
-      << " Net weight : " << snacks[i].weight << endl
-      << " Energy : " << snacks[i].energy << endl<<endl;
+	snacks_new->brand = "Mocha"+1;
+	snacks_new->weight = 2.3 + i;
+	snacks_new->energy = 250 * i; 
+	cout << "Good's Name: snack No."<< i << " \n"
+	  << " Brand name : " << snacks[i].brand << endl
+	  << " Net weight : " << snacks[i].weight << endl
+	  << " Energy : " << snacks[i].energy << endl<<endl;
   }
    // 6题的 NEW 版本  可循环赋值 
    cout<<"_________________________________"<<endl<<endl; 
